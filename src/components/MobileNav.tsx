@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import {
   ArrowUpRight,
   Briefcase,
@@ -35,14 +36,6 @@ export function MobileNav() {
   useEffect(() => {
     setIsSearchOpen(false);
   }, [pathname]);
-
-  useEffect(() => {
-    if (!isSearchOpen) return;
-    const timer = window.setTimeout(() => {
-      inputRef.current?.focus({ preventScroll: true });
-    }, 260);
-    return () => window.clearTimeout(timer);
-  }, [isSearchOpen]);
 
   useEffect(() => {
     if (!isSearchOpen) return;
@@ -115,33 +108,56 @@ export function MobileNav() {
         </div>
       </header>
 
-      {/* Single-root Search Layer inside AnimatePresence (prevents double-jump mount/exit) */}
-      <AnimatePresence>
-        {isSearchOpen && (
-          <motion.div
-            key="mobile-search-overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.22 }}
-            className="lg:hidden fixed inset-0 z-40"
-          >
-            <div
-              onClick={() => setIsSearchOpen(false)}
-              className="absolute inset-0 bg-black/18 backdrop-blur-[2px]"
-              aria-hidden="true"
-            />
+      {/* Portaled Search Layer outside any transform/backdrop-filter ancestor */}
+      {typeof document !== 'undefined' &&
+        createPortal(
+          <AnimatePresence>
+            {isSearchOpen && (
+              <motion.div
+                key="mobile-search-overlay"
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={{
+                  hidden: {},
+                  visible: {},
+                  exit: { transition: { when: 'afterChildren' } },
+                }}
+                className="lg:hidden fixed inset-0 z-40"
+              >
+                <motion.div
+                  onClick={() => setIsSearchOpen(false)}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1, transition: { duration: 0.2 } },
+                    exit: { opacity: 0, transition: { duration: 0.18 } },
+                  }}
+                  className="absolute inset-0 bg-black/18"
+                  aria-hidden="true"
+                />
 
-            <motion.section
-              role="dialog"
-              aria-label="Search services, builds, and contact channels"
-              initial={{ opacity: 0, y: 24, scale: 0.96 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 18, scale: 0.97 }}
-              transition={{ duration: 0.3, ease: EASE_OUT_EXPO }}
-              style={{ bottom: 'calc(5.6rem + env(safe-area-inset-bottom))' }}
-              className="fixed inset-x-4 z-50 max-w-md mx-auto glass-nav glass-nav-scrolled rounded-[26px] p-3.5 origin-bottom"
-            >
+                <motion.section
+                  role="dialog"
+                  aria-label="Search services, builds, and contact channels"
+                  variants={{
+                    hidden: { y: 20 },
+                    visible: {
+                      y: 0,
+                      transition: { duration: 0.28, ease: EASE_OUT_EXPO },
+                    },
+                    exit: {
+                      y: 16,
+                      transition: { duration: 0.2, ease: EASE_OUT_EXPO },
+                    },
+                  }}
+                  onAnimationComplete={() => {
+                    if (isSearchOpen) {
+                      inputRef.current?.focus({ preventScroll: true });
+                    }
+                  }}
+                  style={{ bottom: 'calc(5.6rem + env(safe-area-inset-bottom))' }}
+                  className="absolute inset-x-4 max-w-md mx-auto glass-nav glass-nav-scrolled rounded-[26px] p-3.5 will-change-transform"
+                >
               {/* Search Input */}
               <div className="relative flex items-center">
                 <Search
@@ -230,10 +246,12 @@ export function MobileNav() {
                   </div>
                 )}
               </div>
-            </motion.section>
-          </motion.div>
+                </motion.section>
+              </motion.div>
+            )}
+          </AnimatePresence>,
+          document.body,
         )}
-      </AnimatePresence>
 
       {/* Bottom Floating Liquid Glass Dock (3 Icon-Only Tabs + Separate Search Button) */}
       <nav
@@ -285,8 +303,8 @@ export function MobileNav() {
             aria-expanded={isSearchOpen}
             aria-label={isSearchOpen ? 'Close search' : 'Search services and builds'}
             className={[
-              'pointer-events-auto rounded-full w-14 h-14 flex items-center justify-center relative cursor-pointer transition-transform active:scale-95',
-              isSearchOpen ? 'glass-nav-dark' : 'glass-nav text-[#111111]',
+              'pointer-events-auto glass-nav rounded-full w-14 h-14 flex items-center justify-center relative cursor-pointer transition-transform active:scale-95',
+              isSearchOpen ? 'glass-nav-active-dark' : 'text-[#111111]',
             ].join(' ')}
           >
             {isSearchOpen ? (
