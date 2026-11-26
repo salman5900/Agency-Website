@@ -21,17 +21,17 @@ const PRINCIPLES = [
 
 export function AboutPage() {
   return (
-    <div className="pt-36 pb-10">
+    <div className="pt-24 lg:pt-36 pb-10">
       {/* Studio Story Hero */}
-      <section className="max-w-6xl mx-auto px-8 pb-16">
-        <div className="grid grid-cols-12 gap-12 items-start">
+      <section className="max-w-6xl mx-auto px-5 lg:px-8 pb-12 lg:pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: EASE_OUT_EXPO }}
-            className="col-span-7"
+            className="lg:col-span-7"
           >
-            <h1 className="font-display text-[3.25rem] leading-[1.06] font-semibold text-[#111111]">
+            <h1 className="font-display text-[2.25rem] lg:text-[3.25rem] leading-[1.06] font-semibold text-[#111111]">
               Five builders in Kerala bringing everyday businesses online with craft.
             </h1>
           </motion.div>
@@ -40,7 +40,7 @@ export function AboutPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.08, ease: EASE_OUT_EXPO }}
-            className="col-span-5 glass-window rounded-[24px] p-7"
+            className="lg:col-span-5 glass-window rounded-[24px] p-6 lg:p-7"
           >
             <div className="inline-flex items-center gap-2 text-xs font-medium text-[#111111]">
               <MapPin className="w-4 h-4 text-[#FF5A1F]" strokeWidth={1.75} />
@@ -68,8 +68,8 @@ export function AboutPage() {
       </section>
 
       {/* Principles Strip */}
-      <section className="max-w-6xl mx-auto px-8 py-10">
-        <RevealStagger className="grid grid-cols-3 gap-8 border-t border-b border-black/10 py-10">
+      <section className="max-w-6xl mx-auto px-5 lg:px-8 py-8 lg:py-10">
+        <RevealStagger className="grid grid-cols-1 lg:grid-cols-3 gap-7 lg:gap-8 border-t border-b border-black/10 py-8 lg:py-10">
           {PRINCIPLES.map((item) => (
             <RevealItem key={item.title}>
               <div className="flex items-start gap-2.5">
@@ -85,26 +85,26 @@ export function AboutPage() {
       </section>
 
       {/* Team of Five */}
-      <section className="max-w-6xl mx-auto px-8 pt-14">
-        <Reveal className="flex items-end justify-between mb-10">
+      <section className="max-w-6xl mx-auto px-5 lg:px-8 pt-10 lg:pt-14">
+        <Reveal className="flex items-end justify-between mb-8 lg:mb-10">
           <div>
-            <h2 className="font-display text-[2.5rem] leading-[1.1] font-semibold text-[#111111]">
+            <h2 className="font-display text-[2rem] lg:text-[2.5rem] leading-[1.1] font-semibold text-[#111111]">
               The Team of Five
             </h2>
-            <p className="mt-3 text-base text-[#4D4B46] max-w-xl">
+            <p className="mt-3 text-[0.95rem] lg:text-base text-[#4D4B46] max-w-xl">
               Placeholder profiles structured around our five core disciplines—ready for your
               team’s names, roles, and portraits.
             </p>
           </div>
         </Reveal>
 
-        <RevealStagger className="grid grid-cols-6 gap-5">
+        <RevealStagger className="grid grid-cols-1 lg:grid-cols-6 gap-5">
           {TEAM_MEMBERS.map((member, index) => (
             <RevealItem
               key={member.id}
-              className={index < 2 ? 'col-span-3' : 'col-span-2'}
+              className={index < 2 ? 'lg:col-span-3' : 'lg:col-span-2'}
             >
-              <article className="glass-window rounded-[24px] p-7 flex flex-col justify-between h-full">
+              <article className="glass-window rounded-[24px] p-6 lg:p-7 flex flex-col justify-between h-full">
                 <div>
                   <div className="flex items-center justify-between gap-4">
                     <div className="w-12 h-12 rounded-2xl bg-[#111111] text-[#F7F6F2] font-display font-semibold text-base flex items-center justify-center relative">

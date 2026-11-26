@@ -5,10 +5,10 @@ import { ChannelIcon } from './ChannelIcon';
 
 export function Footer() {
   return (
-    <footer className="mt-28 pb-12 px-8">
-      <div className="max-w-6xl mx-auto glass-window rounded-[28px] p-10">
-        <div className="grid grid-cols-12 gap-10 pb-10 border-b border-black/8">
-          <div className="col-span-5 flex flex-col justify-between gap-6">
+    <footer className="mt-20 lg:mt-28 pb-10 lg:pb-12 px-5 lg:px-8">
+      <div className="max-w-6xl mx-auto glass-window rounded-[24px] lg:rounded-[28px] p-6 lg:p-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 pb-8 lg:pb-10 border-b border-black/8">
+          <div className="lg:col-span-5 flex flex-col justify-between gap-5 lg:gap-6">
             <div>
               <Link
                 to="/"
@@ -36,9 +36,9 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="col-span-3">
-            <h3 className="text-sm font-semibold text-[#111111] mb-4">Pages</h3>
-            <ul className="space-y-2.5 text-sm">
+          <div className="lg:col-span-3">
+            <h3 className="text-sm font-semibold text-[#111111] mb-3 lg:mb-4">Pages</h3>
+            <ul className="grid grid-cols-2 lg:grid-cols-1 gap-2.5 text-sm">
               {[
                 { label: 'Home', to: '/' },
                 { label: 'Services', to: '/services' },
@@ -58,8 +58,8 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="col-span-4">
-            <h3 className="text-sm font-semibold text-[#111111] mb-4">Direct Channels</h3>
+          <div className="lg:col-span-4">
+            <h3 className="text-sm font-semibold text-[#111111] mb-3 lg:mb-4">Direct Channels</h3>
             <div className="space-y-2.5">
               {DIRECT_CHANNELS.map((channel) => (
                 <a
@@ -80,7 +80,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-6 flex items-center justify-between text-xs text-[#6E6B64]">
+        <div className="pt-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-2 text-xs text-[#6E6B64]">
           <span>
             © {new Date().getFullYear()} {AGENCY_CONFIG.name}. Placeholder brand & template
             portfolio.

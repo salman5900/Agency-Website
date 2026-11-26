@@ -103,29 +103,29 @@ export function ContactPage() {
   };
 
   return (
-    <div className="pt-36 pb-10">
+    <div className="pt-24 lg:pt-36 pb-10">
       <motion.section
         initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, ease: EASE_OUT_EXPO }}
-        className="max-w-6xl mx-auto px-8 pb-12"
+        className="max-w-6xl mx-auto px-5 lg:px-8 pb-8 lg:pb-12"
       >
-        <h1 className="font-display text-[3.25rem] leading-[1.06] font-semibold text-[#111111] max-w-2xl">
+        <h1 className="font-display text-[2.25rem] lg:text-[3.25rem] leading-[1.06] font-semibold text-[#111111] max-w-2xl">
           Start a conversation with SideQuest.
         </h1>
-        <p className="mt-4 text-base leading-relaxed text-[#4D4B46] max-w-2xl">
-          Send an Inquiry straight to our inbox below, or pick a Direct Channel on the right—
-          WhatsApp, Instagram, or email—whichever feels easiest.
+        <p className="mt-3.5 lg:mt-4 text-[0.95rem] lg:text-base leading-relaxed text-[#4D4B46] max-w-2xl">
+          Send an Inquiry straight to our inbox below, or pick a Direct Channel—WhatsApp,
+          Instagram, or email—whichever feels easiest.
         </p>
       </motion.section>
 
-      <section className="max-w-6xl mx-auto px-8 grid grid-cols-12 gap-8 items-start">
-        {/* 4-Field Inquiry Form */}
+      <section className="max-w-6xl mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        {/* 4-Field Inquiry Form (First on Mobile, Left on Desktop) */}
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.08, ease: EASE_OUT_EXPO }}
-          className="col-span-7 glass-window rounded-[28px] p-9"
+          className="lg:col-span-7 glass-window rounded-[24px] lg:rounded-[28px] p-6 lg:p-9"
         >
           <h2 className="font-display text-2xl font-semibold text-[#111111]">
             Send an Inquiry
@@ -137,7 +137,7 @@ export function ContactPage() {
           {status === 'sent-live' || status === 'sent-preview' ? (
             <div
               role="status"
-              className="mt-7 rounded-2xl bg-[#EFECE4] p-7 border border-black/8"
+              className="mt-7 rounded-2xl bg-[#EFECE4] p-6 lg:p-7 border border-black/8"
             >
               <div className="flex items-start gap-3.5">
                 <CheckCircle2 className="w-6 h-6 text-[#FF5A1F] shrink-0 mt-0.5" />
@@ -152,7 +152,7 @@ export function ContactPage() {
                       ? 'Thank you for reaching out. One of our five builders will reply within one business day.'
                       : 'Your form validation and submission flow are ready. Once you supply your email/form endpoint key, this button delivers Inquiries directly to your inbox.'}
                   </p>
-                  <div className="mt-5 flex items-center gap-3">
+                  <div className="mt-5 flex flex-wrap items-center gap-3">
                     {status === 'sent-preview' && (
                       <a
                         href={buildMailtoFallback()}
@@ -174,7 +174,7 @@ export function ContactPage() {
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="mt-7 space-y-5" noValidate>
+            <form onSubmit={handleSubmit} className="mt-6 lg:mt-7 space-y-5" noValidate>
               {status === 'error' && errorMessage && (
                 <div
                   role="alert"
@@ -185,7 +185,7 @@ export function ContactPage() {
                 </div>
               )}
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label
                     htmlFor="inquiry-name"
@@ -262,7 +262,7 @@ export function ContactPage() {
                 />
               </div>
 
-              <div className="pt-2 flex items-center justify-between gap-4">
+              <div className="pt-2 flex flex-wrap items-center justify-between gap-4">
                 <span className="text-xs text-[#6E6B64]">
                   Replies usually within 24 hours · IST
                 </span>
@@ -280,14 +280,14 @@ export function ContactPage() {
         </motion.div>
 
         {/* Direct Channels */}
-        <RevealStagger className="col-span-5 space-y-4">
+        <RevealStagger className="lg:col-span-5 space-y-4">
           {DIRECT_CHANNELS.map((channel) => (
             <RevealItem key={channel.id}>
               <a
                 href={channel.href}
                 target={channel.id === 'email' ? undefined : '_blank'}
                 rel={channel.id === 'email' ? undefined : 'noopener noreferrer'}
-                className="group glass-window rounded-[22px] p-6 flex items-start justify-between gap-4 hover:-translate-y-0.5 transition-transform duration-200"
+                className="group glass-window rounded-[22px] p-5 lg:p-6 flex items-start justify-between gap-4 hover:-translate-y-0.5 transition-transform duration-200"
               >
                 <div className="flex items-start gap-4">
                   <span className="w-11 h-11 rounded-2xl bg-[#111111] text-[#FF5A1F] flex items-center justify-center shrink-0">
@@ -313,7 +313,7 @@ export function ContactPage() {
           ))}
 
           <RevealItem>
-            <div className="glass-window rounded-[22px] p-6 flex items-center gap-3.5 text-sm text-[#4D4B46]">
+            <div className="glass-window rounded-[22px] p-5 lg:p-6 flex items-center gap-3.5 text-sm text-[#4D4B46]">
               <Clock className="w-5 h-5 text-[#111111] shrink-0" strokeWidth={1.75} />
               <div>
                 <div className="font-semibold text-[#111111]">

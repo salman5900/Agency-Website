@@ -23,7 +23,7 @@ export function Navbar() {
   });
 
   return (
-    <header className="fixed top-5 inset-x-0 z-50 flex justify-center px-6 pointer-events-none">
+    <header className="hidden lg:flex fixed top-5 inset-x-0 z-50 justify-center px-6 pointer-events-none">
       <nav
         aria-label="Primary navigation"
         className={[

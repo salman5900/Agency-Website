@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-import { Navbar } from './Navbar';
 import { Footer } from './Footer';
+import { MobileNav } from './MobileNav';
+import { Navbar } from './Navbar';
 
 export function Layout() {
   const { pathname } = useLocation();
@@ -11,8 +12,9 @@ export function Layout() {
   }, [pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F7F6F2] text-[#111111]">
+    <div className="min-h-screen flex flex-col bg-[#F7F6F2] text-[#111111] pb-24 lg:pb-0">
       <Navbar />
+      <MobileNav />
       <main className="flex-1">
         <Outlet />
       </main>
