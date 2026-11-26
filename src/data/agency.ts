@@ -183,6 +183,9 @@ export const PROCESS_STEPS: ProcessStep[] = [
   },
 ];
 
+const assetUrl = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+
 export const FEATURED_BUILDS: FeaturedBuild[] = [
   {
     slug: 'malabar-fresh-commerce',
@@ -204,7 +207,7 @@ export const FEATURED_BUILDS: FeaturedBuild[] = [
     ],
     stack: ['React', 'TypeScript', 'Tailwind CSS', 'REST API'],
     metricsLabel: 'Template Showcase · Ready for Live Link',
-    image: '/images/build-retail.jpg',
+    image: assetUrl('images/build-retail.jpg'),
     imageAlt: 'Malabar Fresh Market storefront web application preview',
     isTemplate: true,
     liveUrlPlaceholder: '#template-link-pending',
@@ -229,7 +232,7 @@ export const FEATURED_BUILDS: FeaturedBuild[] = [
     ],
     stack: ['React Native', 'TypeScript', 'Node API', 'Push Notifications'],
     metricsLabel: 'Template Showcase · Ready for Live Link',
-    image: '/images/build-booking.jpg',
+    image: assetUrl('images/build-booking.jpg'),
     imageAlt: 'Kairali Care Booking mobile appointment screens preview',
     isTemplate: true,
     liveUrlPlaceholder: '#template-link-pending',
@@ -254,7 +257,7 @@ export const FEATURED_BUILDS: FeaturedBuild[] = [
     ],
     stack: ['React', 'TypeScript', 'PostgreSQL', 'Charting'],
     metricsLabel: 'Template Showcase · Ready for Live Link',
-    image: '/images/build-ops.jpg',
+    image: assetUrl('images/build-ops.jpg'),
     imageAlt: 'Coastline Ops Ledger inventory and dispatch dashboard preview',
     isTemplate: true,
     liveUrlPlaceholder: '#template-link-pending',

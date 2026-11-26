@@ -12,7 +12,7 @@ import { WorkPage } from './pages/WorkPage';
 export function App() {
   return (
     <MotionConfig reducedMotion="user">
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<HomePage />} />
