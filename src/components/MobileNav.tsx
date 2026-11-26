@@ -14,7 +14,6 @@ import { AnimatePresence, motion } from 'motion/react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AGENCY_CONFIG } from '../data/agency';
 import { filterSearchEntries, type SearchEntry } from '../data/searchIndex';
-import { EASE_OUT_EXPO } from './MotionPrimitives';
 
 const DOCK_ITEMS = [
   { to: '/', label: 'Home', Icon: Home },
@@ -111,26 +110,23 @@ export function MobileNav() {
       {/* Portaled Search Layer outside any transform/backdrop-filter ancestor */}
       {typeof document !== 'undefined' &&
         createPortal(
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
             {isSearchOpen && (
               <motion.div
                 key="mobile-search-overlay"
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                variants={{
-                  hidden: {},
-                  visible: {},
-                  exit: { transition: { when: 'afterChildren' } },
-                }}
+                exit={{ transition: { duration: 0.22 } }}
                 className="lg:hidden fixed inset-0 z-40"
               >
                 <motion.div
                   onClick={() => setIsSearchOpen(false)}
-                  variants={{
-                    hidden: { opacity: 0 },
-                    visible: { opacity: 1, transition: { duration: 0.2 } },
-                    exit: { opacity: 0, transition: { duration: 0.18 } },
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: 1,
+                    transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1] },
+                  }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.22, ease: [0.4, 0, 1, 1] },
                   }}
                   className="absolute inset-0 bg-black/18"
                   aria-hidden="true"
@@ -139,16 +135,15 @@ export function MobileNav() {
                 <motion.section
                   role="dialog"
                   aria-label="Search services, builds, and contact channels"
-                  variants={{
-                    hidden: { y: 20 },
-                    visible: {
-                      y: 0,
-                      transition: { duration: 0.28, ease: EASE_OUT_EXPO },
-                    },
-                    exit: {
-                      y: 16,
-                      transition: { duration: 0.2, ease: EASE_OUT_EXPO },
-                    },
+                  initial={{ y: 28 }}
+                  animate={{
+                    y: 0,
+                    transition: { duration: 0.38, ease: [0.22, 1, 0.36, 1] },
+                  }}
+                  exit={{
+                    y: 20,
+                    opacity: 0,
+                    transition: { duration: 0.22, ease: [0.4, 0, 1, 1] },
                   }}
                   onAnimationComplete={() => {
                     if (isSearchOpen) {
