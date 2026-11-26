@@ -2,6 +2,7 @@
   "name": "sidequest-agency",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://salman5900.github.io/Agency-Website",
   "type": "module",
   "directories": {
     "doc": "docs"
@@ -9,6 +10,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
   },
@@ -27,6 +30,7 @@
     "@types/react": "^19.3.3",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.3.0",
+    "gh-pages": "^6.3.0",
     "tailwindcss": "^4.3.5",
     "typescript": "^7.0.2",
     "vite": "^8.4.0"

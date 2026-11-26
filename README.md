@@ -105,16 +105,19 @@ Almost everything a team member or business owner needs to update lives in **one
 
 ## Deploying to GitHub Pages
 
-This repository includes an automated workflow at **[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)**.
+This project uses the [`gh-pages`](https://www.npmjs.com/package/gh-pages) package (`predeploy` + `deploy` scripts in `package.json`) to publish `dist/` cleanly to the `gh-pages` branch.
 
-### One-Time GitHub Setup
-1. Open your repository on GitHub (`salman5900/Agency-Website`).
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment → Source**, select **GitHub Actions**.
-4. Push your latest `main` branch (`git push`). GitHub Actions will automatically install dependencies, build `dist/`, and publish your site to:
+### Deploy Steps
+1. Build and publish the site to the `gh-pages` branch:
+   ```bash
+   npm run deploy
+   ```
+2. On GitHub (`salman5900/Agency-Website`), open **Settings → Pages**.
+3. Under **Build and deployment → Source**, confirm **Deploy from a branch** is selected with branch **`gh-pages`** (`/ (root)`). *(GitHub usually sets this automatically right after your first `npm run deploy`.)*
+4. Visit your live website:
    **[https://salman5900.github.io/Agency-Website/](https://salman5900.github.io/Agency-Website/)**
 
-*(If you later connect a custom domain like `sidequest.in`, set `VITE_BASE_PATH=/` in your workflow environment and update `pathSegmentsToKeep = 0` in `public/404.html`.)*
+*(If you later connect a custom domain like `sidequest.in`, set `VITE_BASE_PATH=/` when building and update `pathSegmentsToKeep = 0` in `public/404.html`.)*
 
 ---
 
@@ -144,13 +147,15 @@ npm run build
 
 # Preview the production build locally (http://localhost:4173/Agency-Website/)
 npm run preview
+
+# Build and deploy dist/ to the gh-pages branch on GitHub Pages
+npm run deploy
 ```
 
 ### Project Structure
 
 ```text
 .
-├── .github/workflows/deploy.yml     # Automated GitHub Pages build & deploy
 ├── docs/
 │   ├── adr/                         # Architecture Decision Records (0001–0004)
 │   └── screenshots/                 # Desktop & Mobile screenshots for all pages
