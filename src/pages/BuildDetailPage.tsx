@@ -125,7 +125,7 @@ export function BuildDetailPage() {
 
           <RevealItem className="lg:col-span-6 glass-window rounded-[22px] lg:rounded-[24px] p-6 lg:p-8">
             <h2 className="font-display text-xl lg:text-2xl font-semibold text-[#111111]">
-              How SideQuest Solved It
+              How BetterConnect Solved It
             </h2>
             <p className="mt-3 text-[0.95rem] lg:text-base leading-relaxed text-[#4D4B46]">
               {build.solution}

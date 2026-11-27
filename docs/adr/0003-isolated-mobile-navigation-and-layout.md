@@ -2,7 +2,7 @@
 
 Status: accepted
 
-Below `1024px`, SideQuest replaces the wide desktop header and multi-column desktop grids with an isolated mobile shell (`lg:hidden`) featuring a slim top brand bar, an icon-only floating Liquid Glass bottom dock (`Home`, `Services`, `Work`), and a separate animated floating keyword Search pill.
+Below `1024px`, BetterConnect replaces the wide desktop header and multi-column desktop grids with an isolated mobile shell (`lg:hidden`) featuring a slim top brand bar, an icon-only floating Liquid Glass bottom dock (`Home`, `Services`, `Work`), and a separate animated floating keyword Search pill.
 
 ## Considered Options
 

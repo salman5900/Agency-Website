@@ -1,6 +1,8 @@
-# SideQuest — Agency Website
+# BetterConnect — Agency Website
 
-**SideQuest** is the official website for a five-person software agency based in **Kerala, India** that builds international-quality web applications, mobile apps, and custom business software for small businesses, local firms, small agencies, and growing startups.
+> *Connecting Ideas. Building Futures*
+
+**BetterConnect** is the official website for a five-person software agency based in **Kerala, India** that builds international-quality web applications, mobile apps, and custom business software for small businesses, local firms, small agencies, and growing startups.
 
 It is a **100% frontend website** (no custom server or database required) built with React and TypeScript, designed from the ground up with two carefully tailored experiences:
 - **Desktop (`1024px` and wider)**: A spacious, editorial layout with a floating frosted-glass navigation bar, a panoramic curved product showcase carousel, and interactive service tabs.
@@ -15,7 +17,7 @@ It is a **100% frontend website** (no custom server or database required) built 
 Every page has been designed and tested separately for both **Desktop (`1440×900`)** and **Mobile (`390×844`)** so neither compromises the other.
 
 ### 1. Home (`/`) — Curved Hero Carousel & Interactive Pillars
-Visitors immediately see what SideQuest builds through a continuously spinning **concave-curved showcase strip** (hover to pause, click any card to inspect that build). Below the hero sits the Team of 5 badge, why SideQuest exists, an interactive Service Pillars selector (desktop tabs / mobile inline accordion), Featured Builds, and a direct call-to-action.
+Visitors immediately see what BetterConnect builds through a continuously spinning **concave-curved showcase strip** (hover to pause, click any card to inspect that build). Below the hero sits the Team of 5 badge, why BetterConnect exists, an interactive Service Pillars selector (desktop tabs / mobile inline accordion), Featured Builds, and a direct call-to-action.
 
 | Desktop (`1440×900`) | Mobile (`390×844`) |
 | :---: | :---: |
@@ -33,7 +35,7 @@ On mobile, tapping the detached circular **Search** button next to the bottom do
 ---
 
 ### 3. Services (`/services`) — Four Pillars & 3-Step Process
-Explains what SideQuest delivers in plain language across four **Service Pillars** (*Web Applications & Websites*, *Mobile Applications*, *Business Automation & Internal Tools*, and *UI/UX & Digital Launch*), followed by a transparent three-step workflow (**1. Discover → 2. Build → 3. Launch**) with custom quotes instead of rigid packages.
+Explains what BetterConnect delivers in plain language across four **Service Pillars** (*Web Applications & Websites*, *Mobile Applications*, *Business Automation & Internal Tools*, and *UI/UX & Digital Launch*), followed by a transparent three-step workflow (**1. Discover → 2. Build → 3. Launch**) with custom quotes instead of rigid packages.
 
 | Desktop (`1440×900`) | Mobile (`390×844`) |
 | :---: | :---: |
@@ -51,7 +53,7 @@ Showcases three template **Featured Builds** (*Malabar Fresh Market*, *Kairali C
 ---
 
 ### 5. Featured Build Detail (`/work/:slug`)
-Clicking any project opens a dedicated breakdown covering the **Client Challenge**, **How SideQuest Solved It**, **Core Deliverables**, **Technology Stack**, a **Live Link** slot, and a quick jump to the next build.
+Clicking any project opens a dedicated breakdown covering the **Client Challenge**, **How BetterConnect Solved It**, **Core Deliverables**, **Technology Stack**, a **Live Link** slot, and a quick jump to the next build.
 
 | Desktop (`1440×900`) | Mobile (`390×844`) |
 | :---: | :---: |
@@ -60,7 +62,7 @@ Clicking any project opens a dedicated breakdown covering the **Client Challenge
 ---
 
 ### 6. About (`/about`) — Kerala Roots & The Team of Five
-Shares SideQuest’s story—bringing international-grade design and engineering to everyday businesses—alongside three studio principles and five editable **Team Member** cards covering design, frontend, backend, mobile, and delivery/QA.
+Shares BetterConnect’s story—bringing international-grade design and engineering to everyday businesses—alongside three studio principles and five editable **Team Member** cards covering design, frontend, backend, mobile, and delivery/QA.
 
 | Desktop (`1440×900`) | Mobile (`390×844`) |
 | :---: | :---: |
@@ -117,7 +119,7 @@ This project uses the [`gh-pages`](https://www.npmjs.com/package/gh-pages) packa
 4. Visit your live website:
    **[https://salman5900.github.io/Agency-Website/](https://salman5900.github.io/Agency-Website/)**
 
-*(If you later connect a custom domain like `sidequest.in`, set `VITE_BASE_PATH=/` when building and update `pathSegmentsToKeep = 0` in `public/404.html`.)*
+*(If you later connect a custom domain like `betterconnect.in`, set `VITE_BASE_PATH=/` when building and update `pathSegmentsToKeep = 0` in `public/404.html`.)*
 
 ---
 
@@ -161,11 +163,12 @@ npm run deploy
 │   └── screenshots/                 # Desktop & Mobile screenshots for all pages
 ├── public/
 │   ├── 404.html                     # Clean-URL SPA redirect for GitHub Pages
-│   ├── favicon.svg
+│   ├── favicon.png
 │   └── images/                      # Studio renders for Featured Builds
 ├── src/
 │   ├── assets/fonts/                # Self-hosted variable .woff2 fonts
 │   ├── components/
+│   │   ├── BrandMark.tsx            # BetterConnect BC emblem
 │   │   ├── BuildVisual.tsx          # Studio product image or mobile/desktop Ops UI
 │   │   ├── ChannelIcon.tsx          # Unified icons for WhatsApp, Instagram & Email
 │   │   ├── CurvedHeroCarousel.tsx   # Desktop panoramic concave-curved marquee
@@ -201,7 +204,7 @@ npm run deploy
 
 ## Documentation & Decisions
 
-- **[GLOSSARY.md](GLOSSARY.md)** — Canonical domain terms (`SideQuest`, `Client`, `Featured Build`, `Inquiry`, `Direct Channel`, `Service Pillar`, `Team Member`).
+- **[GLOSSARY.md](GLOSSARY.md)** — Canonical domain terms (`BetterConnect`, `Client`, `Featured Build`, `Inquiry`, `Direct Channel`, `Service Pillar`, `Team Member`).
 - **[ADR 0001 — Static React Website Architecture](docs/adr/0001-static-react-website-architecture.md)**
 - **[ADR 0002 — Compositor-Only Scroll Motion](docs/adr/0002-compositor-only-scroll-motion.md)**
 - **[ADR 0003 — Isolated Mobile Navigation and Layout](docs/adr/0003-isolated-mobile-navigation-and-layout.md)**

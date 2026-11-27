@@ -2,7 +2,7 @@
 
 Status: accepted
 
-SideQuest's static React + Vite SPA deploys to GitHub Pages (`https://salman5900.github.io/Agency-Website/`) via the `gh-pages` package (`npm run deploy` pushing `dist/` to the `gh-pages` branch) with clean route URLs supported through `public/404.html`, rather than `HashRouter` or GitHub Actions Pages workflows.
+BetterConnect's static React + Vite SPA deploys to GitHub Pages (`https://salman5900.github.io/Agency-Website/`) via the `gh-pages` package (`npm run deploy` pushing `dist/` to the `gh-pages` branch) with clean route URLs supported through `public/404.html`, rather than `HashRouter` or GitHub Actions Pages workflows.
 
 ## Considered Options
 

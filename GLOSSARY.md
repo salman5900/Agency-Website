@@ -1,11 +1,12 @@
-# SideQuest Agency
+# BetterConnect Agency
 
-The public website and lead-capture presence for SideQuest, a five-person software agency in Kerala building international-quality digital products for small businesses.
+The public website and lead-capture presence for BetterConnect ("Connecting Ideas. Building Futures"), a five-person software agency in Kerala building international-quality digital products for small businesses.
 
 ## Language
 
-**SideQuest**:
-The working placeholder name for the five-person agency, representing the studio, its team, and its brand identity until finalized.
+**BetterConnect**:
+The agency brand name (one word, capital B and C) representing the five-person studio, its team, and its digital presence.
+_Avoid_: SideQuest, Better Connect
 
 **Client**:
 A small business, non-technical firm, small agency, or small startup seeking to bring its operations or product into the digital world.
@@ -20,7 +21,7 @@ A structured project request submitted by a prospective Client through the websi
 _Avoid_: Ticket, order, lead
 
 **Direct Channel**:
-An external messaging or social link—such as WhatsApp, Instagram, or direct email—allowing a prospective Client to reach the agency outside the contact form.
+An external messaging or email link—such as WhatsApp or direct email (and Instagram when active)—allowing a prospective Client to reach the agency outside the contact form.
 _Avoid_: Support channel, hotline
 
 **Service Pillar**:
@@ -28,5 +29,5 @@ One of the agency's four core capability areas offered on a custom-quote basis r
 _Avoid_: Package, pricing tier, SKU
 
 **Team Member**:
-One of the five core SideQuest builders represented on the About page with their discipline and role.
+One of the five core BetterConnect builders represented on the About page with their discipline and role.
 _Avoid_: Employee, contractor, staff

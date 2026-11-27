@@ -54,26 +54,29 @@ export interface DirectChannel {
 }
 
 /**
- * Centralized SideQuest configuration.
- * Replace placeholder links, handles, and form endpoint before production launch.
+ * Centralized BetterConnect configuration.
+ * Add instagramHref once the agency Instagram account is created.
  */
 export const AGENCY_CONFIG = {
-  name: 'SideQuest',
+  name: 'BetterConnect',
+  tagline: 'Connecting Ideas. Building Futures',
   location: 'Kerala, India',
   timezone: 'IST (UTC+5:30)',
   teamSize: 5,
-  // Plug your Web3Forms / Formspree endpoint URL here once ready:
-  inquiryEndpoint: import.meta.env.VITE_FORM_ENDPOINT || '',
-  contactEmail: 'hello@sidequest.agency',
-  whatsappHref: 'https://wa.me/910000000000?text=Hi%20SideQuest%2C%20we%27d%20like%20to%20discuss%20a%20project.',
-  instagramHref: 'https://instagram.com/sidequest.agency',
+  inquiryEndpoint:
+    import.meta.env.VITE_FORM_ENDPOINT ||
+    'https://formsubmit.co/ajax/salmanahamed5900@gmail.com',
+  contactEmail: 'salmanahamed5900@gmail.com',
+  whatsappHref:
+    'https://wa.me/919544571233?text=Hi%20BetterConnect%2C%20we%27d%20like%20to%20discuss%20a%20project.',
+  instagramHref: '',
 } as const;
 
-export const DIRECT_CHANNELS: DirectChannel[] = [
+const RAW_DIRECT_CHANNELS: DirectChannel[] = [
   {
     id: 'whatsapp',
     label: 'WhatsApp',
-    handle: '+91 00000 00000 (Placeholder)',
+    handle: '+91 95445 71233',
     description: 'Fastest way to start a conversation, share voice notes, or ask quick questions.',
     href: AGENCY_CONFIG.whatsappHref,
     ctaLabel: 'Message on WhatsApp',
@@ -81,7 +84,7 @@ export const DIRECT_CHANNELS: DirectChannel[] = [
   {
     id: 'instagram',
     label: 'Instagram',
-    handle: '@sidequest.agency (Placeholder)',
+    handle: '',
     description: 'Follow behind-the-scenes builds or send a DM directly to our team.',
     href: AGENCY_CONFIG.instagramHref,
     ctaLabel: 'Open Instagram',
@@ -91,10 +94,14 @@ export const DIRECT_CHANNELS: DirectChannel[] = [
     label: 'Direct Email',
     handle: AGENCY_CONFIG.contactEmail,
     description: 'Ideal for sharing briefs, documents, or existing product links directly.',
-    href: `mailto:${AGENCY_CONFIG.contactEmail}?subject=Project%20Inquiry%20for%20SideQuest`,
+    href: `mailto:${AGENCY_CONFIG.contactEmail}?subject=Project%20Inquiry%20for%20BetterConnect`,
     ctaLabel: 'Send an Email',
   },
 ];
+
+export const DIRECT_CHANNELS: DirectChannel[] = RAW_DIRECT_CHANNELS.filter(
+  (channel) => Boolean(channel.href),
+);
 
 export const SERVICE_PILLARS: ServicePillar[] = [
   {

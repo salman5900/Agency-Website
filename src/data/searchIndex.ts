@@ -32,7 +32,7 @@ const PAGE_ENTRIES: SearchEntry[] = [
     subtitle: 'Overview, curved showcase & capabilities',
     kind: 'Page',
     to: '/',
-    keywords: ['home', 'overview', 'sidequest', 'agency', 'kerala', 'showcase'],
+    keywords: ['home', 'overview', 'betterconnect', 'agency', 'kerala', 'showcase'],
   },
   {
     id: 'page-services',

@@ -14,6 +14,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AGENCY_CONFIG } from '../data/agency';
 import { filterSearchEntries, type SearchEntry } from '../data/searchIndex';
+import { BrandMark } from './BrandMark';
 
 const DOCK_ITEMS = [
   { to: '/', label: 'Home', Icon: Home },
@@ -68,15 +69,9 @@ export function MobileNav() {
         <div className="flex items-center justify-between gap-3 max-w-md mx-auto">
           <Link
             to="/"
-            className="pointer-events-auto glass-nav rounded-full pl-2.5 pr-4 py-1.5 inline-flex items-center gap-2 text-[#111111] font-display font-semibold text-sm tracking-tight shrink-0"
+            className="pointer-events-auto glass-nav rounded-full pl-3.5 pr-4 py-2 inline-flex items-center gap-2 text-[#111111] font-display font-semibold text-sm tracking-tight shrink-0"
           >
-            <span
-              aria-hidden="true"
-              className="w-6 h-6 rounded-lg bg-[#111111] flex items-center justify-center relative"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#F7F6F2]" />
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A1F] absolute top-0.5 right-0.5" />
-            </span>
+            <BrandMark className="h-[18px] w-auto" />
             <span>{AGENCY_CONFIG.name}</span>
           </Link>
 
@@ -166,7 +161,7 @@ export function MobileNav() {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search services, builds, WhatsApp..."
-                  aria-label="Search SideQuest by keyword"
+                  aria-label="Search BetterConnect by keyword"
                   className="w-full rounded-2xl bg-white/88 border border-white/95 pl-10 pr-9 py-2.5 text-sm text-[#111111] placeholder:text-[#6E6B64] focus:outline-none focus:border-[#FF5A1F]"
                 />
                 {query && (
@@ -235,7 +230,7 @@ export function MobileNav() {
                       }}
                       className="mt-2 glass-pill-dark rounded-full px-4 py-1.5 text-xs font-medium inline-flex items-center gap-1.5"
                     >
-                      <span>Ask SideQuest</span>
+                      <span>Ask BetterConnect</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </button>
                   </div>

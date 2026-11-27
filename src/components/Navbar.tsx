@@ -3,6 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { motion, useMotionValueEvent, useScroll } from 'motion/react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { AGENCY_CONFIG } from '../data/agency';
+import { BrandMark } from './BrandMark';
 
 const NAV_ITEMS = [
   { to: '/services', label: 'Services' },
@@ -35,13 +36,7 @@ export function Navbar() {
           to="/"
           className="flex items-center gap-2.5 text-[#111111] font-display font-semibold text-[1.0625rem] tracking-tight shrink-0"
         >
-          <span
-            aria-hidden="true"
-            className="w-7 h-7 rounded-lg bg-[#111111] flex items-center justify-center relative shadow-sm"
-          >
-            <span className="w-2.5 h-2.5 rounded-full bg-[#F7F6F2]" />
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A1F] absolute top-1 right-1" />
-          </span>
+          <BrandMark className="h-[22px] w-auto" />
           <span>{AGENCY_CONFIG.name}</span>
         </Link>
 

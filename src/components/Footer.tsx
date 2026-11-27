@@ -1,6 +1,7 @@
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { AGENCY_CONFIG, DIRECT_CHANNELS } from '../data/agency';
+import { BrandMark } from './BrandMark';
 import { ChannelIcon } from './ChannelIcon';
 
 export function Footer() {
@@ -12,16 +13,17 @@ export function Footer() {
             <div>
               <Link
                 to="/"
-                className="inline-flex items-center gap-2.5 text-[#111111] font-display font-semibold text-xl"
+                className="inline-flex items-center gap-3.5 text-[#111111]"
               >
-                <span
-                  aria-hidden="true"
-                  className="w-7 h-7 rounded-lg bg-[#111111] flex items-center justify-center relative"
-                >
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#F7F6F2]" />
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A1F] absolute top-1 right-1" />
-                </span>
-                <span>{AGENCY_CONFIG.name}</span>
+                <BrandMark className="h-8 w-auto" />
+                <div>
+                  <div className="font-display font-semibold text-xl leading-tight">
+                    {AGENCY_CONFIG.name}
+                  </div>
+                  <div className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#4D4B46] mt-0.5">
+                    {AGENCY_CONFIG.tagline}
+                  </div>
+                </div>
               </Link>
               <p className="mt-4 text-[0.95rem] leading-relaxed text-[#4D4B46] max-w-sm">
                 A five-person software agency in Kerala building international-quality web apps,
@@ -82,8 +84,7 @@ export function Footer() {
 
         <div className="pt-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-2 text-xs text-[#6E6B64]">
           <span>
-            © {new Date().getFullYear()} {AGENCY_CONFIG.name}. Placeholder brand & template
-            portfolio.
+            © {new Date().getFullYear()} {AGENCY_CONFIG.name}. {AGENCY_CONFIG.tagline}.
           </span>
           <span>Team of {AGENCY_CONFIG.teamSize} · Built for small businesses</span>
         </div>

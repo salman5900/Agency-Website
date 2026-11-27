@@ -11,7 +11,7 @@ const PRINCIPLES = [
   },
   {
     title: 'Direct access to the builders',
-    body: 'No layers of account managers. When you message SideQuest, you talk directly with the five people designing and shipping your software.',
+    body: 'No layers of account managers. When you message BetterConnect, you talk directly with the five people designing and shipping your software.',
   },
   {
     title: 'Plain English, dependable delivery',
@@ -48,8 +48,11 @@ export function AboutPage() {
                 {AGENCY_CONFIG.location} · Working with Clients worldwide
               </span>
             </div>
-            <p className="mt-4 text-[0.95rem] leading-relaxed text-[#4D4B46]">
-              SideQuest started with a simple observation: great local shops, clinics, small
+            <div className="mt-3 text-[11px] font-semibold tracking-[0.12em] uppercase text-[#FF5A1F]">
+              {AGENCY_CONFIG.tagline}
+            </div>
+            <p className="mt-3 text-[0.95rem] leading-relaxed text-[#4D4B46]">
+              BetterConnect started with a simple observation: great local shops, clinics, small
               agencies, and non-technical firms run on grit, yet their software is often
               clunky or nonexistent. We build calm, durable digital products that match their
               ambition.

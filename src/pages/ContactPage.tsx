@@ -40,7 +40,7 @@ export function ContactPage() {
   const [errorMessage, setErrorMessage] = useState('');
 
   const buildMailtoFallback = () => {
-    const subject = encodeURIComponent(`[SideQuest Inquiry] ${form.projectType} — ${form.name}`);
+    const subject = encodeURIComponent(`[BetterConnect Inquiry] ${form.projectType} — ${form.name}`);
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\nProject Type: ${form.projectType}\n\n${form.message}`,
     );
@@ -79,11 +79,17 @@ export function ContactPage() {
           email: form.email,
           projectType: form.projectType,
           message: form.message,
-          source: 'SideQuest Website',
+          _subject: `[BetterConnect Inquiry] ${form.projectType} — ${form.name}`,
+          _template: 'table',
+          source: 'BetterConnect Website',
         }),
       });
 
-      if (!response.ok) {
+      const result = (await response.json().catch(() => null)) as
+        | { success?: string | boolean }
+        | null;
+
+      if (!response.ok || result?.success === 'false' || result?.success === false) {
         throw new Error('Could not deliver inquiry right now.');
       }
 
@@ -111,11 +117,11 @@ export function ContactPage() {
         className="max-w-6xl mx-auto px-5 lg:px-8 pb-8 lg:pb-12"
       >
         <h1 className="font-display text-[2.25rem] lg:text-[3.25rem] leading-[1.06] font-semibold text-[#111111] max-w-2xl">
-          Start a conversation with SideQuest.
+          Start a conversation with BetterConnect.
         </h1>
         <p className="mt-3.5 lg:mt-4 text-[0.95rem] lg:text-base leading-relaxed text-[#4D4B46] max-w-2xl">
-          Send an Inquiry straight to our inbox below, or pick a Direct Channel—WhatsApp,
-          Instagram, or email—whichever feels easiest.
+          Send an Inquiry straight to our inbox below, or pick a Direct Channel—WhatsApp or
+          direct email—whichever feels easiest.
         </p>
       </motion.section>
 

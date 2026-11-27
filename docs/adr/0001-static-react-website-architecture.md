@@ -2,7 +2,7 @@
 
 Status: accepted
 
-SideQuest's marketing site is built as a client-side React, TypeScript, and Vite single-page application using React Router and a zero-backend email form endpoint, rather than a server-rendered framework or a custom backend.
+BetterConnect's marketing site is built as a client-side React, TypeScript, and Vite single-page application using React Router and a zero-backend email form endpoint, rather than a server-rendered framework or a custom backend.
 
 ## Considered Options
 

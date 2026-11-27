@@ -141,7 +141,7 @@ export function HomePage() {
 
           <div className="col-span-4 flex flex-col items-center justify-center gap-2">
             <a
-              href="#why-sidequest"
+              href="#why-betterconnect"
               className="group flex flex-col items-center gap-2 text-xs font-medium text-[#4D4B46] hover:text-[#111111] transition-colors"
             >
               <span>Explore More</span>
@@ -211,7 +211,7 @@ export function HomePage() {
       </section>
 
       {/* Positioning Split */}
-      <section id="why-sidequest" className="max-w-6xl mx-auto px-5 lg:px-8 py-14 lg:py-20">
+      <section id="why-betterconnect" className="max-w-6xl mx-auto px-5 lg:px-8 py-14 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <Reveal className="lg:col-span-5">
             <h2 className="font-display text-[2rem] lg:text-[2.5rem] leading-[1.1] font-semibold text-[#111111]">
@@ -621,7 +621,7 @@ export function HomePage() {
               </h2>
               <p className="mt-3 text-[0.95rem] lg:text-base text-[#4D4B46] max-w-xl">
                 Tell us what you’re building or fixing. Send an Inquiry directly to our email, or
-                reach out on WhatsApp or Instagram—no formal RFP required.
+                reach out on WhatsApp—no formal RFP required.
               </p>
             </div>
             <div className="lg:col-span-5 flex flex-wrap items-center lg:justify-end gap-3 w-full">

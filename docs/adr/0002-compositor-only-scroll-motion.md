@@ -2,7 +2,7 @@
 
 Status: accepted
 
-SideQuest's scroll reveals, staggered entrances, and hero scroll-depth effects use `motion` (`motion/react`) restricted strictly to GPU-composited properties (`transform` and `opacity`), avoiding animated `filter: blur()` or heavy multi-layer backdrop-filter repaints during scroll.
+BetterConnect's scroll reveals, staggered entrances, and hero scroll-depth effects use `motion` (`motion/react`) restricted strictly to GPU-composited properties (`transform` and `opacity`), avoiding animated `filter: blur()` or heavy multi-layer backdrop-filter repaints during scroll.
 
 ## Considered Options
 
